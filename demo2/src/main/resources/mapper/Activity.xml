@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.ActivityMapper">
+    <update id="update">
+        update activityinfo
+        <set>
+            <if test="actname != null">
+                actname = #{actname},
+            </if>
+            <if test="address != null">
+                address = #{address},
+            </if>
+            <if test="host != null">
+                host = #{host},
+            </if>
+            <if test="start_time != null">
+                start_time = #{start_time},
+            </if>
+            <if test="vedio != null">
+                vedio = #{vedio}
+            </if>
+            <if test="text != null">
+                text = #{text}
+            </if>
+            <if test="charge != null">
+                charge = #{charge}
+            </if>
+            <if test="buylink != null">
+                buylink = #{buylink}
+            </if>
+
+        </set>
+        <where>id = #{id}</where>
+    </update>
+</mapper>
